@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+
+      <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=0.3">
+            <title>My Quiz App</title>
+
+            <link rel="stylesheet" href="styles.css">
+            <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2&family=Patua+One&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Londrina+Sketch&display=swap" rel="stylesheet">
+      </head>
+
+      <body>
+
+            <div class="wrapper" >
+                  <div class="cont cont1">
+                        <span>Welcome to <span id="title" style="font-family: 'Tangerine', cursive;">My&nbsp;Quiz&nbsp;!</span></span><br>
+                        <button class="b b1" onclick="fun1()">Start&nbsp;!</button>
+                  </div>
+
+                  <div class="cont cont2" style="display: none;">
+                        <span style="font-family: 'Baloo Da 2', cursive; font-weight: 400;">We strongly recommend you to use Laptop or PC to Enjoy Our&nbsp;Quiz&nbsp;!</span></span><br>
+                        <button class="b b2" onclick="con()">Continue&nbsp;!</button>
+                  </div>
+
+                  <div class="cont cont3" style="display: none;">
+                        <span style="font-family: 'Baloo Da 2', cursive; font-weight: 400;">Are you a ....</span><br>
+                        <div class="optC">                              
+                              <div><input type="radio" id="cs" name="opt"><label for="cs">Computer&nbsp;Science&nbsp;Guy.</label></div><br>
+                              <div><input type="radio" id="noncs" name="opt"><label for="noncs">Non&nbsp;Computer&nbsp;Science&nbsp;Guy.</label></div><br>  
+                        </div>
+                        <div id="lab"><label></label></div>
+                        <button class="b b3" onclick="fun2()">Start&nbsp;!</button>
+                  </div>
+            </div>
+              
+            <section class="main" style="filter: blur(5px);">
+                  <header>
+                        
+                        <img src="logo.jpeg" alt="Logo">
+                        <img id="img2" src="logo.jpeg" alt="Logo">
+                        
+                        <h1>My Quiz&nbsp;!</h1>
+                  
+                  </header>
+
+                  <ul>
+                        <li><button class="btn" id="btn1" onclick="jump(1)">&nbsp;1&nbsp;</button></li>
+                        <li><button class="btn" id="btn2" onclick="jump(2)">&nbsp;2&nbsp;</button></li>
+                        <li><button class="btn" id="btn3" onclick="jump(3)">&nbsp;3&nbsp;</button></li>
+                        <li><button class="btn" id="btn4" onclick="jump(4)">&nbsp;4&nbsp;</button></li>
+                        <li><button class="btn" id="btn5" onclick="jump(5)">&nbsp;5&nbsp;</button></li>
+                        <li><button class="btn" id="btn6" onclick="jump(6)">&nbsp;6&nbsp;</button></li>
+                        <li><button class="btn" id="btn7" onclick="jump(7)">&nbsp;7&nbsp;</button></li>
+                        <li><button class="btn" id="btn8" onclick="jump(8)">&nbsp;8&nbsp;</button></li>
+                        <li><button class="btn" id="btn9" onclick="jump(9)">&nbsp;9&nbsp;</button></li>
+                        <li><button class="btn" id="btn10" onclick="jump(10)">10</button></li>
+                  </ul>
+            
+                  <div class="ques">
+
+                        <div class="que" id="q1" style="display: none;">
+                              <label id="text">What is the full form of U.&nbsp;A.&nbsp;E.&nbsp;?</label>
+                              <div class="opt">
+                                    <div class="gap"><input type="radio" class="opt1" id="o1" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o1">United Arab Emirates.</label></div>
+                                    <div class="gap"><input type="radio" class="opt2" id="o2" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o2">United Abu-Dhabi Emirates.</label></div>
+                                    <div class="gap"><input type="radio" class="opt3" id="o3" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o3">United Arab Emperors.</label></div>
+                                    <div class="gap"><input type="radio" class="opt4" id="o4" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o4">United Abu-Dhabi Emperors.</label></div>
+                              
+                                    <button class="next" onclick="next()">Next&nbsp;!</button>
+                              </div>
+                        </div>
+
+                        
+                        <div class="que" id="q2" style="display: none;">
+                              <label id="text">What is the answer of the following expression&nbsp;?<br>&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;+&nbsp;5&nbsp;*&nbsp;6&nbsp;/&nbsp;2&nbsp;=&nbsp;?</label>
+                              <div class="opt">
+                                    <div class="gap"><input type="radio" class="opt1" id="o5" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o5">21</label></div>
+                                    <div class="gap"><input type="radio" class="opt2" id="o6" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o6">17</label></div>
+                                    <div class="gap"><input type="radio" class="opt3" id="o7" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o7">42</label></div>
+                                    <div class="gap"><input type="radio" class="opt4" id="o8" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o8">34</label></div>
+                              
+                                    <button class="next" onclick="next()">Next&nbsp;!</button>
+                              </div>
+                        </div>
+
+
+                        <div class="que" id="q3" style="display: none;">
+                              <label id="text">The first person who walked on the Moon...&nbsp;?</label>
+                              <div class="opt">
+                                    <div class="gap"><input type="radio" class="opt1" id="o9" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o9">Kalpana Chawla</label></div>
+                                    <div class="gap"><input type="radio" class="opt2" id="o10" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o10">David Scott</label></div>
+                                    <div class="gap"><input type="radio" class="opt3" id="o11" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o11">Edwin Buzz</label></div>
+                                    <div class="gap"><input type="radio" class="opt4" id="o12" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o12">Neil Armstong</label></div>
+                              
+                                    <button class="next" onclick="next()">Next&nbsp;!</button>
+                              </div>
+                        </div>
+
+
+                        <div class="que" id="q4" style="display: none;">
+                              <label id="text">The World's largest Forest....&nbsp;?</label>
+                              <div class="opt">
+                                    <div class="gap"><input type="radio" class="opt1" id="o13" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o13">Congo Rain Forest, Africa.</label></div>
+                                    <div class="gap"><input type="radio" class="opt2" id="o14" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o14">Tongass Forest, North America.</label></div>
+                                    <div class="gap"><input type="radio" class="opt3" id="o15" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o15">Amazon Forest, Africa.</label></div>
+                                    <div class="gap"><input type="radio" class="opt4" id="o16" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o16">Sundarbans, Asia.</label></div>
+                              
+                                    <button class="next" onclick="next()">Next&nbsp;!</button>
+                              </div>
+                        </div>
+
+
+                        <div class="que" id="q5" style="display: none;">
+                              <label id="text">In which of the following country, the Biggest Forest Disaster of 2019 has occured....&nbsp;?</label>
+                              <div class="opt">
+                                    <div class="gap"><input type="radio" class="opt1" id="o17" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o17">Africa</label></div>
+                                    <div class="gap"><input type="radio" class="opt2" id="o18" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o18">North America</label></div>
+                                    <div class="gap"><input type="radio" class="opt3" id="o19" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o19">Australia</label></div>
+                                    <div class="gap"><input type="radio" class="opt4" id="o20" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o20">Brazil</label></div>
+                              
+                                    <button class="next" onclick="next()">Next&nbsp;!</button>
+                              </div>
+                        </div>
+
+
+                        <div class="que" id="q6" style="display: none;">
+                              <label id="text">If a Writing pen packet cost's for a seller is Rs.&nbsp;20 and each packet consists of 5&nbsp;-&nbsp;pens, If he sells one pen at Rs.&nbsp5, Then how much profit he earns after selling 20&nbsp-&nbsppackets....&nbsp;?</label>
+                              <div class="opt">
+                                    <div class="gap"><input type="radio" class="opt1" id="o21" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o21">Rs. 5</label></div>
+                                    <div class="gap"><input type="radio" class="opt2" id="o22" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o22">Rs. 100</label></div>
+                                    <div class="gap"><input type="radio" class="opt3" id="o23" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o23">Rs. 20</label></div>
+                                    <div class="gap"><input type="radio" class="opt4" id="o24" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o24">Rs. 50</label></div>
+                              
+                                    <button class="next" onclick="next()">Next&nbsp;!</button>
+                              </div>
+                        </div>
+
+
+                        <div class="que" id="q7" style="display: none;">
+                              <label id="text">The World's tallest Tree....&nbsp;?</label>
+                              <div class="opt">
+                                    <div class="gap"><input type="radio" class="opt1" id="o25" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o25">Mann Gum Trees</label></div>
+                                    <div class="gap"><input type="radio" class="opt2" id="o26" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o26">Gaint Sequoia Trees</label></div>
+                                    <div class="gap"><input type="radio" class="opt3" id="o27" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o27">Kashmir Cypress Trees</label></div>
+                                    <div class="gap"><input type="radio" class="opt4" id="o28" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o28">Red Wood Trees</label></div>
+                              
+                                    <button class="next" onclick="next()">Next&nbsp;!</button>
+                              </div>
+                        </div>
+
+
+                        <div class="que" id="q8" style="display: none;">
+                              <label id="text">The Most poisnous Animal in the World....&nbsp;?</label>
+                              <div class="opt">
+                                    <div class="gap"><input type="radio" class="opt1" id="o29" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o29">Box JellyFish</label></div>
+                                    <div class="gap"><input type="radio" class="opt2" id="o30" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o30">Indian Taipan</label></div>
+                                    <div class="gap"><input type="radio" class="opt3" id="o31" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o31">Black cobra</label></div>
+                                    <div class="gap"><input type="radio" class="opt4" id="o32" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o32">Poison Dart Frog</label></div>
+                              
+                                    <button class="next" onclick="next()">Next&nbsp;!</button>
+                              </div>
+                        </div>
+
+
+                        <div class="que" id="q9" style="display: none;">
+                              <label id="text">The Calendar name which is followed by the world....&nbsp;?</label>
+                              <div class="opt">
+                                    <div class="gap"><input type="radio" class="opt1" id="o33" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o33">Julian Calendar</label></div>
+                                    <div class="gap"><input type="radio" class="opt2" id="o34" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o34">Hijri Calendar</label></div>
+                                    <div class="gap"><input type="radio" class="opt3" id="o35" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o35">Indian Calendar</label></div>
+                                    <div class="gap"><input type="radio" class="opt4" id="o36" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o36">Gregorian Calendar</label></div>
+                              
+                                    <button class="next" onclick="next()">Next&nbsp;!</button>
+                              </div>
+                        </div>
+
+
+                        <div class="que" id="q10" style="display: none;">
+                              <label id="text">The World's tallest Mountain....&nbsp;?</label>
+                              <div class="opt">
+                                    <div class="gap"><input type="radio" class="opt1" id="o37" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o37">Mount Fuji</label></div>
+                                    <div class="gap"><input type="radio" class="opt2" id="o38" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o38">Mount Kilimanjaro</label></div>
+                                    <div class="gap"><input type="radio" class="opt3" id="o39" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o39">Mount Everest</label></div>
+                                    <div class="gap"><input type="radio" class="opt4" id="o40" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o40">Mauna Kea</label></div>
+                              
+                                    <button class="next" onclick="next()">Next&nbsp;!</button>
+                              </div>
+                        </div>
+
+
+                        <!-- CS Guys Questions -->
+                        <div class="que" id="csq1" style="display: none;">
+                              <label id="text">The person who wrote the world's first computer program....&nbsp;?</label>
+                              <div class="opt">
+                                    <div class="gap"><input type="radio" class="opt1" id="o41" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o41">Ada Lovelace</label></div>
+                                    <div class="gap"><input type="radio" class="opt2" id="o42" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o42">Charles Babbage</label></div>
+                                    <div class="gap"><input type="radio" class="opt3" id="o43" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o43">Bill Gates</label></div>
+                                    <div class="gap"><input type="radio" class="opt4" id="o44" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o44">Tim Berner's Lee</label></div>
+                              
+                                    <button class="next"  onclick="next()">Next&nbsp;!</button>
+                              </div>
+                        </div>
+
+                        
+                        <div class="que" id="csq2" style="display: none;">
+                              <label id="text">What is the output of the following Python&nbsp;code&nbsp;?<br>
+                                    <span  style="display: block; padding: 5px 10px; background-color: lightgray; border-radius: 4px; margin-top: 20px;">>>>&nbsp;&nbsp;&nbsp;&nbsp;print(&nbsp;2&nbsp;+&nbsp;7&nbsp;*&nbsp;5&nbsp;/&nbsp;2&nbsp;)&nbsp;</span>
+                              </label>
+                              <div class="opt">
+                                    <div class="gap"><input type="radio" class="opt1" id="o45" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o45">22</label></div>
+                                    <div class="gap"><input type="radio" class="opt2" id="o46" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o46">19.5</label></div>
+                                    <div class="gap"><input type="radio" class="opt3" id="o47" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o47">19</label></div>
+                                    <div class="gap"><input type="radio" class="opt4" id="o48" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o48">22.5</label></div>
+                              
+                                    <button class="next" onclick="next()">Next&nbsp;!</button>
+                              </div>
+                        </div>
+
+
+                        <div class="que" id="csq3" style="display: none;">
+                              <label id="text">Complete the following statement.<br><span >"Every Scripting Language is a Programming Language, ... "</span></label>
+                              <div class="opt">
+                                    <div class="gap"><input type="radio" class="opt1" id="o49" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o49">And Every Programming Language is also a Scripting Language.</label></div>
+                                    <div class="gap"><input type="radio" class="opt2" id="o50" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o50">And Every Scripting Language is Compiled and Run.</label></div>
+                                    <div class="gap"><input type="radio" class="opt3" id="o51" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o51">And all Scripting Languages are more Powerful than Any Programming Language.</label></div>
+                                    <div class="gap"><input type="radio" class="opt4" id="o52" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o52">But Every Programming Language is not a Scripting Language.</label></div>
+                              
+                                    <button class="next" onclick="next()">Next&nbsp;!</button>
+                              </div>
+                        </div>
+
+
+                        <div class="que" id="csq4" style="display: none;">
+                              <label id="text">Python was Designed and Developed by....&nbsp;?</label>
+                              <div class="opt">
+                                    <div class="gap"><input type="radio" class="opt1" id="o53" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o53">Bjarne Stroutstup</label></div>
+                                    <div class="gap"><input type="radio" class="opt2" id="o54" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o54">James Gosling</label></div>
+                                    <div class="gap"><input type="radio" class="opt3" id="o55" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o55">Guido Von Rossum</label></div>
+                                    <div class="gap"><input type="radio" class="opt4" id="o56" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o56">Dennis Ritchie</label></div>
+                              
+                                    <button class="next" onclick="next()">Next&nbsp;!</button>
+                              </div>
+                        </div>
+
+
+                        <div class="que" id="csq5" style="display: none;">
+                              <label id="text">What is the output of the following C&nbsp;program code....&nbsp;?<br>
+                                    <span  style="display: block; padding: 5px 10px; background-color: lightgray; border-radius: 4px; margin-top: 20px;">
+                                          <pre>
+      #include &lt;stdio.h&gt;
+      void main()
+      {
+            char str[4] = "Ziya";
+            printf(str);
+      }                                   </pre>
+                                    </span>
+                              </label>
+                              <div class="opt">
+                                    <div class="gap"><input type="radio" class="opt1" id="o57" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o57">Ziya</label></div>
+                                    <div class="gap"><input type="radio" class="opt2" id="o58" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o58">Error</label></div>
+                                    <div class="gap"><input type="radio" class="opt3" id="o59" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o59">Ziya&#9751;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;( where &#9751; &rarr; Garbage Value) </label></div>
+                                    <div class="gap"><input type="radio" class="opt4" id="o60" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o60">str</label></div>
+                              
+                                    <button class="next" onclick="next()">Next&nbsp;!</button>
+                              </div>
+                        </div>
+
+
+                        <div class="que" id="csq6" style="display: none;">
+                              <label id="text">Which one of the following computers is most powerful....&nbsp;?</label>
+                              <div class="opt">
+                                    <div class="gap"><input type="radio" class="opt1" id="o61" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o61">Notebooks</label></div>
+                                    <div class="gap"><input type="radio" class="opt2" id="o62" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o62">Super Computers</label></div>
+                                    <div class="gap"><input type="radio" class="opt3" id="o63" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o63">Laptops</label></div>
+                                    <div class="gap"><input type="radio" class="opt4" id="o64" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o64">Desktops</label></div>
+                              
+                                    <button class="next" onclick="next()">Next&nbsp;!</button>
+                              </div>
+                        </div>
+
+
+                        <div class="que" id="csq7" style="display: none;">
+                              <label id="text">What will be the output of the following Python code....&nbsp;?<br>
+                                    <span  style="display: block; padding: 5px 10px; background-color: lightgray; border-radius: 4px; margin-top: 20px;">>>>&nbsp;&nbsp;&nbsp;&nbsp;s = "hil"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;s[0] = "Ak"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(s)</span>
+                              </label>
+                              <div class="opt">
+                                    <div class="gap"><input type="radio" class="opt1" id="o65" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o65">Akhil</label></div>
+                                    <div class="gap"><input type="radio" class="opt2" id="o66" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o66">Ahil</label></div>
+                                    <div class="gap"><input type="radio" class="opt3" id="o67" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o67">Mamu</label></div>
+                                    <div class="gap"><input type="radio" class="opt4" id="o68" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o68">Runtime Error: 'Str' object does not support item assignment</label></div>
+                              
+                                    <button class="next" onclick="next()">Next&nbsp;!</button>
+                              </div>
+                        </div>
+
+
+                        <div class="que" id="csq8" style="display: none;">
+                              <label id="text">Founders of Google....&nbsp;?</label>
+                              <div class="opt">
+                                    <div class="gap"><input type="radio" class="opt1" id="o69" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o69">Larry Page and Sergey Brin</label></div>
+                                    <div class="gap"><input type="radio" class="opt2" id="o70" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o70">Guido Von Rossum</label></div>
+                                    <div class="gap"><input type="radio" class="opt3" id="o71" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o71">Sun Microsystems</label></div>
+                                    <div class="gap"><input type="radio" class="opt4" id="o72" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o72">Dennis Ritchie and Ken Thompson</label></div>
+                              
+                                    <button class="next" onclick="next()">Next&nbsp;!</button>
+                              </div>
+                        </div>
+
+
+                        <div class="que" id="csq9" style="display: none;">
+                              <label id="text">How to make the following div invisible....&nbsp;?
+                                    <span  style="display: block; padding: 5px 10px; background-color: lightgray; border-radius: 4px; margin-top: 20px;">&nbsp;&nbsp;&nbsp;&nbsp;&lt; div id="myDiv" &gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt; span &gt;Hello !&lt; span &gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt; /div &gt;</span>
+                              </label>
+                              <div class="opt">
+                                    <div class="gap"><input type="radio" class="opt1" id="o73" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o73">document.querySelector("#myDiv").style.display = "none";</label></div>
+                                    <div class="gap"><input type="radio" class="opt2" id="o74" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o74">document.querySelector("#myDiv").cssText = "style='display: none;' ";</label></div>
+                                    <div class="gap"><input type="radio" class="opt3" id="o75" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o75">document.getElementById("myDiv").style.display = "none";</label></div>
+                                    <div class="gap"><input type="radio" class="opt4" id="o76" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o76">All the above</label></div>
+                              
+                                    <button class="next" onclick="next()">Next&nbsp;!</button>
+                              </div>
+                        </div>
+
+
+                        <div class="que" id="csq10" style="display: none;">
+                              <label id="text">Creators of UNIX OS and C Language....&nbsp;</label>
+                              <div class="opt">
+                                    <div class="gap"><input type="radio" class="opt1" id="o77" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o77">Guido von Rossum and his team</label></div>
+                                    <div class="gap"><input type="radio" class="opt2" id="o78" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o78">James Gosling and his team</label></div>
+                                    <div class="gap"><input type="radio" class="opt3" id="o79" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o79">Dennis Ritchie and Ken Thompson</label></div>
+                                    <div class="gap"><input type="radio" class="opt4" id="o80" name="opt" style="width: 15px; height: 15px; vertical-align: middle; margin-right: 10px;"><label for="o80">Larry Page and Sergey Brin</label></div>
+                              
+                                    <button class="next" onclick="next()">Next&nbsp;!</button>
+                              </div>
+                        </div>
+
+                  </div>
+
+
+
+                  <div class="subCont">
+                        <div class="submit">
+                              <label >To Submit your answers click below .....</label><br>
+                              <button id="btn" onclick="result()">Submit&nbsp;!</button>
+                        </div>
+                  </div>
+
+                  
+            </section>     
+
+
+            <div class="signature">
+                  <span>Developed by </span><br>
+                  <span class="name">T&nbsp;.&nbsp;Ziya...</span><br>
+                  <span>And Fully Dedicate to</span><br>
+                  <span class="name">Saddam Bhai and</span>
+                  <span class="name">Ebenezer Sir</span>
+            </div>
+
+
+            <!-- Result -->
+            <div class="result" style="display: none;">
+                  <span class="resTxt"><u>Result: My Quiz !</u></span>
+                  <span class="score">10 / 10</span>
+                  <span class="resTxt">Congratulations ....</span>
+            </div>
+
+            <section class="decoration" style="display: none;">
+
+                  <section class="sec1">
+                        <div class="set set1">
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                        </div>
+                        
+                        <div class="set set2">
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                        </div>
+                        
+                        <div class="set set3">
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                        </div>
+      
+                        <div class="set set4">
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                        </div>
+                        
+                        <div class="set set5">
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                        </div>
+                        
+                        <div class="set set6">
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                        </div>
+                        
+                        <div class="set set7">
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                        </div>
+                        
+                        <div class="set set8">
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                        </div>
+                        
+                        <div class="set set9">
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                        </div>
+                        
+                        <div class="set set10">
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                        </div>
+                  </section>
+                  
+                  
+                  <section class="sec2">
+                        <div class="set set1">
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                        </div>
+                        
+                        <div class="set set2">
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                        </div>
+                        
+                        <div class="set set3">
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                        </div>
+      
+                        <div class="set set4">
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                        </div>
+                        
+                        <div class="set set5">
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                        </div>
+                        
+                        <div class="set set6">
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                        </div>
+                        
+                        <div class="set set7">
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                        </div>
+                        
+                        <div class="set set8">
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                        </div>
+                        
+                        <div class="set set9">
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                        </div>
+                        
+                        <div class="set set10">
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                        </div>
+                  </section>
+                  
+                  <section class="sec3">
+                        <div class="set set1">
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                        </div>
+                        
+                        <div class="set set2">
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                        </div>
+                        
+                        <div class="set set3">
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                        </div>
+      
+                        <div class="set set4">
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                        </div>
+                        
+                        <div class="set set5">
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                        </div>
+                        
+                        <div class="set set6">
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                        </div>
+                        
+                        <div class="set set7">
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                        </div>
+                        
+                        <div class="set set8">
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                        </div>
+                        
+                        <div class="set set9">
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                        </div>
+                        
+                        <div class="set set10">
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                              <div class="piece"></div>
+                        </div>
+                  </section>
+                  
+            </section>
+
+            <div id="demo">
+
+            </div>
+
+            <script src="script.js"></script>
+      </body>
+
+</html>
